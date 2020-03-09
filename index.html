@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/main.css">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Форма регистрации</title>
+</head>
+<body> 
+  <header>
+    <div class="wrap_head">
+      <h1 class="main_title center-align">Сервис авторизации.</h1>            
+    </div>
+  </header>
+  <div class="wrap_registr_form hide">      
+    <div class="modal_registr_form">
+      <button class="modal_close round_close">Закрыть</button>
+      <div class="wrap_modal_window">
+          <div class="wrap_modal_reg">         
+              <div class="wrap_form">
+                <form class="reg_form">
+                  <div class="text_reg_inp">
+                    <label for="signup-name">Name:<input type="text" name="name" id="signup-name" required></label>
+                    <label for="signup-email">Email:<input type="email" name="email" id="signup-email" required></label>
+                    <label for="signup-pass">Password:<input type="password" name="pass" id="signup-pass" required></label>            
+                    <label for="signup-birthday">Birthday:<input type="text" name="birthday" class="datepicker" id="signup-birthday" required></label>
+                  </div>
+                  <div class="radio_reg_inp">
+                    <label for="reg_sex_male"><input type="radio" value="male"  name="sex" class="signup_sex" id="reg_sex_male"><span>Male</span></label>
+                    <label for="reg_sex_female"><input type="radio" value="female" name="sex" class="signup_sex" id="reg_sex_female"><span>Female</span></label>
+                    <label for="reg_sex_other"><input type="radio" value="other" name="sex" class="signup_sex" id="reg_sex_other" checked><span>Other</span></label>
+                  </div>          
+                </form>
+                <div class="reg_form_rules">
+                  <label>
+                    <input type="checkbox" class="filled-in rules_accept">
+                    <span>Принимаю</span>            
+                    </label>
+                    <span class="rules_open">правила.</span>
+                </div>
+                <div class="reg_form_control">
+                  <button type="submit" class="signup_submit waves-effect waves-light btn-small disabled">Регистрация</button>
+                </div>
+              </div>
+              <div class="wrap_rules">
+                  <h3 class="rules_title">На сайте запрещается:</h3>
+                  <p class="rules_parag">Любая деятельность, незаконная на территории РФ:</p>
+                  <p class="rules_parag">Употребление нецензурной и ненормативной лексики в любом её виде, вне зависимости от языка. Равно как и любые провокации или спекуляции вокруг завуалированности таких слов. А также нецензурные или ненормативные имена (ники) пользователей. Также запрещена обсценная лексика.</p>
+                  <p class="rules_parag">Любая реклама, равно как и упоминания алкогольной продукции, сигарет, проституции, БАДов и лекарственных препаратов. Обсуждение или побуждение к покупке или потреблению всего вышеперечисленного.</p>
+                  <p class="rules_parag">Прямые, косвенные или завуалированные оскорбления других пользователей портала. Угрозы личной расправой или другими деструктивными действиями, которые могут привести к конфликту. Провокации в любом их виде и на любую тему, а также хамское и неуважительное отношение к остальным пользователям портала. Равно как и оскорбления посредством изменения имени пользователя.</p>
+                  <p class="rules_parag">Реклама в любом виде, в том числе реклама организаций, товаров, ресурсов Интернета, размещение реферальных ссылок и самореклама. Любая коммерческая деятельность, включая торговлю играми, аккаунтами, ключами или игровой валютой. Под коммерческой деятельностью подразумевается продажа чего-либо за деньги или их эквивалент.</p>
+                  <p class="rules_parag">Реферальные ссылки на интернет-магазины игровой продукции или игр. Равно как и любые реферальные ссылки.</p>
+                  <p class="rules_parag">Деятельность связанная с распространением информации содержащей клевету, либо порочащие деловую или личную репутацию организаций или людей.</p>      
+                  <p class="rules_parag">Любая деятельность, незаконная на территории РФ:</p>
+                  <p class="rules_parag">Употребление нецензурной и ненормативной лексики в любом её виде, вне зависимости от языка. Равно как и любые провокации или спекуляции вокруг завуалированности таких слов. А также нецензурные или ненормативные имена (ники) пользователей. Также запрещена обсценная лексика.</p>
+                  <p class="rules_parag">Любая реклама, равно как и упоминания алкогольной продукции, сигарет, проституции, БАДов и лекарственных препаратов. Обсуждение или побуждение к покупке или потреблению всего вышеперечисленного.</p>
+                  <p class="rules_parag">Прямые, косвенные или завуалированные оскорбления других пользователей портала. Угрозы личной расправой или другими деструктивными действиями, которые могут привести к конфликту. Провокации в любом их виде и на любую тему, а также хамское и неуважительное отношение к остальным пользователям портала. Равно как и оскорбления посредством изменения имени пользователя.</p>
+                  <p class="rules_parag">Реклама в любом виде, в том числе реклама организаций, товаров, ресурсов Интернета, размещение реферальных ссылок и самореклама. Любая коммерческая деятельность, включая торговлю играми, аккаунтами, ключами или игровой валютой. Под коммерческой деятельностью подразумевается продажа чего-либо за деньги или их эквивалент.</p>
+                  <p class="rules_parag">Реферальные ссылки на интернет-магазины игровой продукции или игр. Равно как и любые реферальные ссылки.</p>
+                  <p class="rules_parag">Деятельность связанная с распространением информации содержащей клевету, либо порочащие деловую или личную репутацию организаций или людей.</p>      
+                  <button class="btn_rules_back btn-flat"><i class="material-icons">keyboard_backspace</i></button>                
+              </div>
+            </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="wrap_login_form">
+    <form class="login_form">
+      <label for="login-email">Email:<input type="email" name="email" id="login-email" required></label>
+      <label for="login-pass">Password:<input type="password" name="pass" id="login-pass" required></label>
+    </form>
+    <div class="login_form_control">
+      <button class="login_submit waves-effect waves-light btn-small">Войти</button>
+      <button class="btn_register waves-effect waves-light btn-small">Регистрация</button>
+    </div>
+  </div>  
+  <script src='materialize/js/materialize.min.js'></script>  
+  <script src="js/ajax.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/modal.js"></script>  
+</body>
+</html>

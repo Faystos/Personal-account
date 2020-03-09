@@ -1,0 +1,11 @@
+.main_head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.head_title {
+  font-size: 24px;
+  color:#009688;
+}
+
