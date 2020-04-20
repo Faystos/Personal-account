@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let userEmail = getCookie('email');
 
-req('POST', '../core/get_user_data.php', getUserData, { "email": userEmail });
+requestHandler('../core/get_user_data.php', { "email": userEmail })
+.then(res => getUserData(res));
 
 function getCookie(cname) {
     let name = cname + "=";
@@ -24,8 +25,7 @@ function getCookie(cname) {
     return "";
 }
 
-function getUserData(result) {
-  result = JSON.parse(result);    
+function getUserData(result) {      
   document.querySelector('#cabinet-name').value = result.name;
   document.querySelector('#cabinet-pass').value = result.password;
   document.querySelector('#cabinet-birthday').value = result.birthday;
@@ -40,7 +40,7 @@ function getUserData(result) {
 }
 
 document.querySelector('.cabinet_update').addEventListener('click', evt => {
-  event.preventDefault();
+  evt.preventDefault();
 
   let sex = document.querySelectorAll('.cabinet_sex');
 
@@ -58,8 +58,9 @@ document.querySelector('.cabinet_update').addEventListener('click', evt => {
     'birthday': document.querySelector('#cabinet-birthday').value,
     'sex': sex
   };
-
-  req('POST', '../core/update_user_data.php', updateUserData, updateData);
+  
+  requestHandler('../core/update_user_data.php', updateData)
+  .then(res => updateUserData(res));
 });
 
 function updateUserData(result) {    

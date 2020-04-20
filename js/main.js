@@ -22,14 +22,15 @@ document.querySelector('.signup_submit').addEventListener('click', evt => {
   }
 
   let data = {
-    'name': name,
-    'pass': pass,
-    'email': email,
-    'birthday': birthday,
-    'sex': sex
-  }
-
-  req ('POST', 'core/signup.php', signup, data);
+    name,
+    pass,
+    email,
+    birthday,
+    sex
+  }  
+ 
+  requestHandler('core/signup.php', data)
+  .then(res => signup(res));
 
   function signup (result) {       
     if (result == 2) {      
@@ -52,11 +53,9 @@ document.querySelector('.login_submit').addEventListener('click', evt => {
     email = document.querySelector('#login-email').value;    
 
   let data = {    
-    'pass': pass,
-    'email': email    
-  }
-
-  req ('POST', 'core/login.php', login, data);
+    pass,
+    email    
+  }  
 
   function login (result) {       
     if (result == 2) {      
@@ -65,26 +64,25 @@ document.querySelector('.login_submit').addEventListener('click', evt => {
     } else if (result == 0) {     
       M.toast({html: 'Такой пользователь не найден!'});
       clearInpLogin();
-    } else {
-      result = JSON.parse(result);
+    } else {            
       let date = new Date();
       date.setTime(date.getTime() + (10 * 60 * 1000));
       let expires = date.toUTCString();
       document.cookie = `email = ${result.email}; expires=${expires}; path=/`;
       location.href = '../cabinet.php';
     }
-  }   
+  } 
+  requestHandler('core/login.php', data)
+  .then(res => login(res));  
 });
 
-function clearInpSignup () {
-  document.querySelector('#signup-name').value = '';
-  document.querySelector('#signup-email').value = '';
-  document.querySelector('#signup-pass').value = '';
-  document.querySelector('#signup-birthday').value = '';
+function clearInpSignup () {  
+  document.querySelector('.reg_form').reset();
+  hendlerCloseModal();
 }
 
-function clearInpLogin () {
-  document.querySelector('#login-email').value = '';
-  document.querySelector('#login-pass').value = '';
+function clearInpLogin () {  
+  document.querySelector('.login_form').reset();
 }
+
 
